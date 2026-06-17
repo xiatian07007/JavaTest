@@ -3,21 +3,21 @@
 //基础运算符
 public class Practice01 {
     public static void main(String[] args) {
-int a=10,b=3;
-        System.out.println(a+b);
-        System.out.println(a-b);
-        System.out.println(a*b);
-        System.out.println(a/b);
-        System.out.println(a%b); //取余数
+        int a = 10, b = 3;
+        System.out.println(a + b);
+        System.out.println(a - b);
+        System.out.println(a * b);
+        System.out.println(a / b);
+        System.out.println(a % b); //取余数
 
         //比较运算符
-        System.out.println(a>b);
-        System.out.println(a==b);
+        System.out.println(a > b);
+        System.out.println(a == b);
 
         //逻辑运算符
-        boolean y=false,x=true;
-        System.out.println(x&&y);
-        System.out.println(x||y);
+        boolean y = false, x = true;
+        System.out.println(x && y);
+        System.out.println(x || y);
         System.out.println(!x);
 
 
