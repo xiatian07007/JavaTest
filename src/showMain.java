@@ -12,9 +12,15 @@ public class showMain{
 //        System.out.println(s.getName());
 
         //继承的方法
-        donInherit dog=new donInherit("xiaowang");
-//        dog.name="小黑";
-       dog.eat("小黑"); //继承父类
-       dog.bark(); //自己写的
+//        donInherit dog=new donInherit("xiaowang");
+////        dog.name="小黑";
+//       dog.eat("小黑"); //继承父类
+//       dog.bark(); //自己写的
+
+
+        Car car=new Car("宝马",120,4);
+        car.showInfo();
+        Bike bike =new Bike("奥迪",190,"lala");
+        bike.ring();
     }
 }
