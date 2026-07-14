@@ -22,5 +22,10 @@ public class showMain{
         car.showInfo();
         Bike bike =new Bike("奥迪",190,"lala");
         bike.ring();
+        car.makeSound();
+        bike.makeSound();
+        Bus bus=new Bus("宇通",80,50);
+        bus.makeSound();
+        bus.showInfo();
     }
 }

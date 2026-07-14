@@ -13,10 +13,15 @@ public class Vehicle {
         this.brand=brand;
         this.speed=speed;
     }
+
+
     public String getBrand() {
     return brand;
     }
     public int getSpeed(){
         return speed;
+    }
+    public void makeSound(){
+        System.out.println("交通工具发出声音");
     }
 }

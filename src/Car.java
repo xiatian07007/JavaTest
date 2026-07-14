@@ -12,6 +12,10 @@ public Car (String brand,int speed,int doors){
 public void showInfo(){
     System.out.println(getBrand()+"速度"+getSpeed()+"车门"+doors);
 }
+@Override
+    public void makeSound(){
+    System.out.println(getBrand()+"汽车：滴滴");
+}
 //public  int getDoors(){
 //    return doors;
 //}

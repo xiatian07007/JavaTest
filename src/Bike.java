@@ -11,6 +11,11 @@ public class Bike extends Vehicle{
     public void ring() {
         System.out.println(getBrand() + "以" + getSpeed() + "的速度骑" + type + "：叮叮叮");
     }
+
+    @Override
+    public void makeSound(){
+        System.out.println(getBrand()+"自行车：滴滴");
+    }
 //    public void makeSound() {
 //        System.out.println("ding");
 //    }
