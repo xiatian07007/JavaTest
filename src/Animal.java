@@ -12,13 +12,13 @@ this.statusType=statusType;
 
 //get方法
 public String getName(){
-    System.out.println(this.name);
+//    System.out.println(this.name);
     return name;
 
 
 }
     public int getAge(){
-        System.out.println(this.age);
+//        System.out.println(this.age);
         return age;
 
     }

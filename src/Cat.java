@@ -14,4 +14,9 @@ public void aget(){
 public void introduce(){
     System.out.println("我得名字叫:"+getName()+"今年"+getAge()+"岁了"+",类型是"+getStatusType()+"性别："+type);
 }
+
+//独有的方法
+    public void catchMouse(){
+    System.out.println("猫在抓老鼠");
+    }
 }
