@@ -1,4 +1,4 @@
-public class Animal {
+public abstract class  Animal {
    //类
    private    String  name;
      private   int age ;
@@ -46,4 +46,7 @@ public String getName(){
     public void introduce(){
     System.out.println("我得名字叫:"+name+"今年"+age+"岁了"+",类型是"+statusType);
     }
+
+ //抽象类
+    public abstract  void  makeSound();
 }

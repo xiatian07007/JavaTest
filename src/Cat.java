@@ -1,4 +1,4 @@
-public class  Cat  extends  Animal{
+public class  Cat  extends  Animal implements Swimmable{
 String type;
 public Cat(String name,int age,String statusType,String type){
 super(name, age, statusType);
@@ -18,5 +18,17 @@ public void introduce(){
 //独有的方法
     public void catchMouse(){
     System.out.println("猫在抓老鼠");
+    }
+
+
+    //重写抽象类
+    @Override
+    public  void makeSound(){
+        System.out.println(getName()+"在喵喵喵");
+    }
+
+    @Override
+    public  void swim(){
+    System.out.println(getName()+"会游泳");
     }
 }

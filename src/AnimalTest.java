@@ -1,5 +1,5 @@
 public class AnimalTest {
-    public static void main(){
+    public static void main() {
 
 //        Animal animal=new Animal("咪咪",2,  "布偶");
 //        animal.introduce();
@@ -16,34 +16,56 @@ public class AnimalTest {
         //多态的调用
 //        父类类型 变量名 = new 子类类型(构造参数);
 //        变量名.被重写的方法();
-//        Animal animal=new Cat("小狗",6,"拉布拉多","男孩子");
-//        animal.introduce();
+        Animal animal = new Cat("小狗", 6, "拉布拉多", "男孩子");
+        animal.introduce();
 //
-//        Animal animalDog=new Dog("蒂帕米",16,"边牧","算数");
-//        animalDog.introduce();
+        Animal animalDog = new Dog("蒂帕米", 16, "边牧", "算数");
+        animalDog.introduce();
 
+        //抽象类
 
+        animal.makeSound();
 
-        //数组的练习
-        //创建一个长度为2的
-         Animal[] list=new Animal[2];
-         list[0]=new Dog("小狗",6,"拉布拉多","叫");
-        list[1]=new Cat("小猫腻",6,"拉布拉多","男孩子");
-//        list[0].introduce();
-//        list[1].introduce();
+        animalDog.makeSound();
 
-        //循环的多态
-        for (Animal  i : list){
-           i.introduce();
+        //多态抽象的数组
+        Animal[] abstris = new Animal[2];
+        abstris[0] = new Cat("小猫腻", 6, "拉布拉多", "男孩子");
+        abstris[1] = new Dog("小狗", 6, "拉布拉多", "叫");
+        for (Animal i : abstris) {
+            i.makeSound();
+            if (i instanceof Swimmable) {
+                Swimmable swimm = (Swimmable) i;
+                swimm.swim();
+            }
 
-           if(i instanceof  Dog){
-               Dog dog=(Dog) i;
-               dog.gurdHome();
-           }else if(i instanceof  Cat){
-               Cat cat=(Cat) i;
-               cat.catchMouse();
-           }
+            if (i instanceof train) {
+                train free = (train) i;
+                free.freeTrain();
+            }
         }
+
+
+//        //数组的练习
+//        //创建一个长度为2的
+//         Animal[] list=new Animal[2];
+//         list[0]=new Dog("小狗",6,"拉布拉多","叫");
+//        list[1]=new Cat("小猫腻",6,"拉布拉多","男孩子");
+////        list[0].introduce();
+////        list[1].introduce();
+//
+//        //循环的多态
+//        for (Animal  i : list){
+//           i.introduce();
+//
+//           if(i instanceof  Dog){
+//               Dog dog=(Dog) i;
+//               dog.gurdHome();
+//           }else if(i instanceof  Cat){
+//               Cat cat=(Cat) i;
+//               cat.catchMouse();
+//           }
+//        }
 
         //调用单独的方法
 //       animalDog.guardHome();
