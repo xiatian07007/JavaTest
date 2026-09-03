@@ -86,6 +86,17 @@ public class AnimalTest {
 //        子类变父类：向上转型，Java 自动完成。
 //        父类恢复为子类：向下转型，需要明确写 (子类类型)，并先用 instanceof 检查。
 
+
+        //调用新的方法
+
+        ReviewNewCat review=new ReviewNewCat("kimi",2,"布偶","还会");
+
+        review.setName("托托");
+        review.setAge(18);
+        review.setStatus("金渐层");
+        review.introduce();
+        review.setAge(-1);
+        review.getAl();
     }
 }
 
