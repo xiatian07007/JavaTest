@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 public class AnimalTest {
+
     public static void main() {
 
 //        Animal animal=new Animal("咪咪",2,  "布偶");
@@ -89,14 +91,67 @@ public class AnimalTest {
 
         //调用新的方法
 
-        ReviewNewCat review=new ReviewNewCat("kimi",2,"布偶","还会");
+//        ReviewNewCat review=new ReviewNewCat("旺财",2,"健康","看家");
+//
+////        review.setName("托托");
+////        review.setAge(18);
+////        review.setStatus("金渐层");
+////        review.introduce();
+//        review.setAge(-1);
+//        review.getAl();
+//        review.introduce();
+//
+//
+//        //测试支付
+////        Alipay alipay = new Alipay(100);
+////        alipay.showAmount();
+////        alipay.pay();
+//
+//        //循环调用
+//        Payment[] payments=new Payment[2];
+//        payments[0]=new Alipay(100) ;
+//        payments[1]=new WechatPay(20);
+//        Refundable refundable = new Alipay(100);
+//        refundable.refund();
+//for(Payment payment:payments){
+//
+//    payment.showAmount();
+//    payment.pay();
+//}
 
-        review.setName("托托");
-        review.setAge(18);
-        review.setStatus("金渐层");
-        review.introduce();
-        review.setAge(-1);
-        review.getAl();
+
+//多数组
+        ArrayList<Payment> payments=new ArrayList<>();
+        payments.add(new Alipay(100));
+        payments.add(new WechatPay(510));
+//        for(Payment payment:payments){
+//
+//    payment.showAmount();
+//    payment.pay();
+//}
+
+
+//        payments.set(1, new Alipay(500));payments.add(new Alipay(50));
+//        Payment payment = payments.get(1);
+//        payment.showAmount();
+//        payment.pay();
+//        System.out.println("支付记录数量：" + payments.get(1)+","+payments.size());
+//        payments.remove(0);
+//
+//        System.out.println("支付记录数量：" + payments.get(1)+","+payments.size());
+
+
+        for (Payment payment:payments) {
+            if(payment.getAmount()==50){
+                System.out.println("找到支付记录：");
+                payment.showAmount();
+                payment.pay();
+            }
+        }
     }
+
+
+
+
 }
 
