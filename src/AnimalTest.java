@@ -18,34 +18,34 @@ public class AnimalTest {
         //多态的调用
 //        父类类型 变量名 = new 子类类型(构造参数);
 //        变量名.被重写的方法();
-        Animal animal = new Cat("小狗", 6, "拉布拉多", "男孩子");
-        animal.introduce();
+//        Animal animal = new Cat("小狗", 6, "拉布拉多", "男孩子");
+//        animal.introduce();
+////
+//        Animal animalDog = new Dog("蒂帕米", 16, "边牧", "算数");
+//        animalDog.introduce();
 //
-        Animal animalDog = new Dog("蒂帕米", 16, "边牧", "算数");
-        animalDog.introduce();
-
-        //抽象类
-
-        animal.makeSound();
-
-        animalDog.makeSound();
-
-        //多态抽象的数组
-        Animal[] abstris = new Animal[2];
-        abstris[0] = new Cat("小猫腻", 6, "拉布拉多", "男孩子");
-        abstris[1] = new Dog("小狗", 6, "拉布拉多", "叫");
-        for (Animal i : abstris) {
-            i.makeSound();
-            if (i instanceof Swimmable) {
-                Swimmable swimm = (Swimmable) i;
-                swimm.swim();
-            }
-
-            if (i instanceof train) {
-                train free = (train) i;
-                free.freeTrain();
-            }
-        }
+//        //抽象类
+//
+//        animal.makeSound();
+//
+//        animalDog.makeSound();
+//
+//        //多态抽象的数组
+//        Animal[] abstris = new Animal[2];
+//        abstris[0] = new Cat("小猫腻", 6, "拉布拉多", "男孩子");
+//        abstris[1] = new Dog("小狗", 6, "拉布拉多", "叫");
+//        for (Animal i : abstris) {
+//            i.makeSound();
+//            if (i instanceof Swimmable) {
+//                Swimmable swimm = (Swimmable) i;
+//                swimm.swim();
+//            }
+//
+//            if (i instanceof train) {
+//                train free = (train) i;
+//                free.freeTrain();
+//            }
+//        }
 
 
 //        //数组的练习
@@ -121,9 +121,9 @@ public class AnimalTest {
 
 
 //多数组
-        ArrayList<Payment> payments=new ArrayList<>();
-        payments.add(new Alipay(100));
-        payments.add(new WechatPay(510));
+//        ArrayList<Payment> payments=new ArrayList<>();
+//        payments.add(new Alipay(100));
+//        payments.add(new WechatPay(50));
 //        for(Payment payment:payments){
 //
 //    payment.showAmount();
@@ -141,17 +141,95 @@ public class AnimalTest {
 //        System.out.println("支付记录数量：" + payments.get(1)+","+payments.size());
 
 
-        for (Payment payment:payments) {
-            if(payment.getAmount()==50){
-                System.out.println("找到支付记录：");
-                payment.showAmount();
-                payment.pay();
-            }
-        }
+//        for (Payment payment:payments) {
+//            if(payment.getAmount()==50){
+//                System.out.println("找到支付记录：");
+//                payment.showAmount();
+//                payment.pay();
+//            }
+//        }
+//        Alipay alipay = new Alipay(1000);
+//        findByAmount(payments, 50);
+//        findByAmount(payments, 999);
+
+//        //添加数据
+//        addPayment(payments,new Alipay(1000));
+//        addPayment(payments,new WechatPay(1000));
+//        alipay.refund();
+//        removePayment(payments,1);
+//        System.out.println("当前记录数：" + payments.size());
+////        QueryPayment(payments,new Alipay(20));
+//        updatePayment(payments,new Alipay(5800));
+//        QueryPayment(payments);
+
+
+        //调用测试类
+        PaymentManager manager = new PaymentManager();
+
+//        manager.showAllPayments();
+        manager.addPayment(new Alipay(5800));
+        manager.addPayment(new WechatPay(2000));
+
+//        manager.showAllPayments();
+        manager.getPaymentByIndex(0);
+        manager.getPaymentByIndex(1);
+        manager.getPaymentByIndex(5);
+        manager.updatePayment(0,new Alipay(6600));
+
+        manager.removePayment(1);
+        manager.showAllPayments();
+
+        manager.findPaymentByIndex(6600);
+        manager.refundAllSupported();
     }
 
 
 
-
+////查询方法
+//    public static void findByAmount(ArrayList<Payment> payments, double targetAmount) {
+//        boolean found = false;
+//        for (Payment payment : payments) {
+//            if (payment.getAmount() == targetAmount) {
+//                payment.showAmount();
+//                payment.pay();
+//                found = true;
+//                break;
+//            }
+//        }
+//
+//        if (!found) {
+//            System.out.println("没有找到金额为 " + targetAmount + " 的付款记录");
+//        }
+//    }
+////添加方法
+//    public static  void addPayment(ArrayList<Payment>payments,Payment payment){
+//        payments.add(payment);
+//        System.out.println("添加成功");
+//    }
+//    //查询
+//    public static void QueryPayment(ArrayList<Payment>payments){
+//
+//        for (Payment payment : payments) {
+//            payment.showAmount();
+//            payment.pay();
+//        }
+//
+//    }
+//    //修改方法
+//    public static void updatePayment(ArrayList<Payment>payments,Payment payment){
+//        payments.set(0,payment);
+//    }
+//    //删除方法
+//public static void removePayment(ArrayList<Payment> payments,
+//                                 int index){
+//        if(index>=0&&index<payments.size()){
+//            Payment removerdPayment=payments.remove(index);
+//            System.out.println("删除成功");
+//            removerdPayment.showAmount();
+//            removerdPayment.pay();
+//            System.out.println("剩余数量：" + payments.size());
+//        }else{
+//            System.out.println("下标不存在");
+//        }
+//}
 }
-

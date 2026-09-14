@@ -10,6 +10,7 @@ public class Alipay extends  Payment implements Refundable{
     }
     @Override
     public void  refund(){
-        System.out.println("退款："+getAmount());
+        System.out.println("退款了："+getAmount());
     }
 }
+                                                                                                                                                                                
