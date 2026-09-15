@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.IllformedLocaleException;
+
 public class AnimalTest {
 
     public static void main() {
@@ -163,26 +166,73 @@ public class AnimalTest {
 //        QueryPayment(payments);
 
 
-        //调用测试类
+        //调用测试类封装的功能
+//        PaymentManager manager = new PaymentManager();
+//
+////        manager.showAllPayments();
+//        manager.addPayment(new Alipay(5800));
+//        manager.addPayment(new WechatPay(2000));
+//
+////        manager.showAllPayments();
+//        manager.getPaymentByIndex(0);
+//        manager.getPaymentByIndex(1);
+//        manager.getPaymentByIndex(5);
+//        manager.updatePayment(0,new Alipay(6600));
+//
+//        manager.removePayment(1);
+//        manager.showAllPayments();
+//
+//        manager.findPaymentByIndex(6600);
+//        manager.refundAllSupported();
+
+        //故意制造异常
+//        ArrayList<Payment> payments = new ArrayList<>();
+//        payments.add(new Alipay(100));
+//        payments.add(new WechatPay(200));
+//        try {
+//            Payment payment = payments.get(5);
+//            payment.pay();
+//        } catch (IndexOutOfBoundsException e) {
+//            System.out.println("下标不存在，请检查输入");
+//        }
         PaymentManager manager = new PaymentManager();
+//        manager.addPayment(new Alipay(5800));
+//        manager.addPayment(new WechatPay(2000));
+//        Payment payment = manager.getPaymentByIndex(1);
+//        if (payment != null) {
+//            payment.showAmount();
+//            payment.pay();
+//        }
+//        try {
+//            Payment payment = new Alipay(-100);
+//            payment.pay();
+//        } catch (IllegalArgumentException e) {
+//            System.out.println("创建失败：" + e.getMessage());
+//        }finally{
+//            System.out.println("支付流程结束");
+//        }
+//        manager.catchError(-100);
 
-//        manager.showAllPayments();
-        manager.addPayment(new Alipay(5800));
-        manager.addPayment(new WechatPay(2000));
+        //
+//    manager.addWechatByAmount(100);
+//    manager.addWechatByAmount(200);
+//    manager.addWechatByAmount(-300);
+//    manager.showAllPayments();
+        manager.addPaymentByType("Alipay", 200);
+        manager.addPaymentByType("Alipay", 100);
+        manager.addPaymentByType("Wechat", 100);
+        manager.addPaymentByType("Wechat", -10);
+//        System.out.println("总金额：" + manager.getTotalAmount());
+        manager.getPaymentCount();
+        manager.showStatistics();
+        manager.countPaymentTypes();
 
-//        manager.showAllPayments();
-        manager.getPaymentByIndex(0);
-        manager.getPaymentByIndex(1);
-        manager.getPaymentByIndex(5);
-        manager.updatePayment(0,new Alipay(6600));
+        ArrayList<HashMap<String, Integer>> result =
+                manager.countPaymentTypesList();
 
-        manager.removePayment(1);
-        manager.showAllPayments();
+        System.out.println(result);
 
-        manager.findPaymentByIndex(6600);
-        manager.refundAllSupported();
     }
-
 
 
 ////查询方法
